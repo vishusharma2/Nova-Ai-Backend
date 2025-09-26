@@ -39,6 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // --- Routes ---
+app.get("/", (req, res) => res.status(200).json({ success: true, message: "Backend is running!" }));
 app.get("/health", (req, res) => res.status(200).json({ status: "UP" }));
 app.use("/api/auth", authRoutes); // login, signup, logout
 app.use("/bot/v1", chatbotRoutes); // chatbot message route
