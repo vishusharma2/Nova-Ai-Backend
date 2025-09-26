@@ -17,7 +17,7 @@ const app = express();
 const port = process.env.PORT || 4002;
 
 const allowedOrigins = [
-  "https://nova-ai-frontend-git-master-vishusharma2s-projects.vercel.app",
+  "https://nova-ai-frontend-phi.vercel.app",
   "http://localhost:5173" // optional for local dev
 ];
 
