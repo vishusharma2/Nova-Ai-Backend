@@ -16,6 +16,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4002;
 
+const allowedOrigins = [
+  "https://nova-ai-frontend-git-master-vishusharma2s-projects.vercel.app",
+  "http://localhost:5173" // optional for local dev
+];
+
 // --- Database Connection ---
 const connectDB = async () => {
   try {
@@ -29,7 +34,7 @@ const connectDB = async () => {
 connectDB();
 
 // --- Middleware ---
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
